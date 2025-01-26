@@ -1,5 +1,3 @@
-* Move env variables away from config
-
 * Make `KeycloakAuthManager` a dependency to be injected after
 
 * Keycloak offers the option to check permissions and policies for different routes, 
