@@ -3,6 +3,7 @@ services:
     postgres:
         image: postgres:16-alpine
         container_name: postgres_db
+        restart: unless-stopped
         volumes:
         - postgres_data:/var/lib/postgresql/data
         environment:
@@ -13,6 +14,7 @@ services:
     keycloak_web:
         image: quay.io/keycloak/keycloak:23.0.7
         container_name: keycloak_web
+        restart: unless-stopped
         environment:
             KC_DB: postgres
             KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
